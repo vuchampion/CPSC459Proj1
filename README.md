@@ -1,6 +1,7 @@
 # CPSC459Proj1
 
-Darren Vu     
+Darren Vu  Section 1
+vuchampion@csu.fullerton.edu
 
 
 Samantha Ibasitas    Section 1
