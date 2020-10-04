@@ -7,7 +7,8 @@ vuchampion@csu.fullerton.edu
 Samantha Ibasitas    Section 1
 samanthaibasitas@csu.fullerton.edu
 
-Michael Jimenez
+Michael Jimenez section 1
+Mjimenez_131@csu.fullerton.edu
 
 
 Sami Aliraqi
