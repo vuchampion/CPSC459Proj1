@@ -8,12 +8,10 @@ public class TxHandler {
 	 * utxoPool by using the UTXOPool(UTXOPool uPool) constructor.
 	 */
 	private UTXOPool utxo_Pool;
-
 	public TxHandler(UTXOPool utxoPool)
 	{
 		utxo_Pool = new UTXOPool(utxoPool);
 	}
-
 	/* Returns true if
 	 * (1) all outputs claimed by tx are in the current UTXO pool,
 	 * (2) the signatures on each input of tx are valid,
@@ -23,10 +21,9 @@ public class TxHandler {
 	        its output values;
 	   and false otherwise.
 	 */
-
 	public boolean isValidTx(Transaction tx)
 	{
-		UTXOPool uniqueUTXOs = new UTXOPool();
+		UTXOPool u_utxo = new UTXOPool();
 		double previousSum = 0;
 		double currentSum = 0;
 		for(int i = 0; i < tx.numInputs(); i++)
@@ -38,9 +35,9 @@ public class TxHandler {
 				return false;
 			if(!output.address.verifySignature(tx.getRawDataToSign(i), input.signature))
 				return false;
-			if(uniqueUTXOs.contains(utxo))
+			if(u_utxo.contains(utxo))
 				return false;
-			uniqueUTXOs.addUTXO(utxo, output);
+			u_utxo.addUTXO(utxo, output);
 			previousSum = previousSum + output.value;
 		}
 		for(Transaction.Output output : tx.getOutputs())
@@ -53,7 +50,6 @@ public class TxHandler {
 			return false;
 		return true;
 	}
-
 	/* Handles each epoch by receiving an unordered array of proposed
 	 * transactions, checking each transaction for correctness,
 	 * returning a mutually valid array of accepted transactions,
