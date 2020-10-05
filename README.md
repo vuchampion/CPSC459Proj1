@@ -11,4 +11,5 @@ Michael Jimenez section 1
 Mjimenez_131@csu.fullerton.edu
 
 
-Sami Aliraqi
+Sami Aliraqi Section 1
+saliraqi@csu.fullerton.edu
