@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 import java.util.Set;
-
+import java.util.HashSet;
 /* CompliantNode refers to a node that follows the rules (not malicious)*/
 public class CompliantNode implements Node {
     public int numRounds;
@@ -23,14 +23,18 @@ public class CompliantNode implements Node {
     }
 
     public void setPendingTransaction(Set<Transaction> pendingTransactions) {
-        this.pendingTransactions.add(tx);
+        this.pendingTransactions = pendingTransactions;
     }
 
     public Set<Transaction> getProposals() {
-        // IMPLEMENT THIS
+        return pendingTransactions;
     }
 
     public void receiveCandidates(ArrayList<Integer[]> candidates) {
-        // IMPLEMENT THIS
+        for(Integer[] cand : candidates) { 
+            if (followees[cand[1]]){
+                pendingTransactions.add(new Transaction(cand[0]));
+            }
+        }
     }
 }
