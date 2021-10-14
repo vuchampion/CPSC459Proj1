@@ -1,4 +1,4 @@
-# CPSC459Proj1
+# Coding Compliant Nodes onto the Bitcoin BlockChain
 
 Darren Vu  Section 1
 vuchampion@csu.fullerton.edu
